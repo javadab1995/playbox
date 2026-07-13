@@ -21,6 +21,6 @@ export const games = [
     id: "number-guess",
     title: "Number Guess",
     image: "/number-guess.jfif",
-    description: "Guess the hidden number between 1 and 10 with hints.",
+    description: "Guess the hidden number between 1 and 20 with hints.",
   },
 ];
