@@ -1,0 +1,26 @@
+@media (min-width: 768px) and (max-width: 1280px) {
+    .lg-hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 540px)  {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .md-hidden {
+        display: none !important;
+    }
+    .md-block {
+        display: block !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+}

@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+.text-white {
+    color: $color-bg-light !important;
+}
+.text-mute {
+    color: $color-text-mute !important;
+}
+.color-primary {
+   
+    color: $color-bg-light;
+}
+
+.accent-color {
+    background-color: $dark-400 !important;
+}
+
+.bg-dark\/70 {
+    background-color: rgba(35, 32, 70, 0.7) !important;
+}
+
+

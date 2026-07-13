@@ -1,0 +1,38 @@
+
+
+// abstracts
+@use 'abstracts/mixins.scss';
+@use 'abstracts/functions.scss';
+@use "abstracts/variables.scss";
+
+// base
+@use 'base/reset.scss';
+@use 'base/typography.scss';
+@use 'base/base.scss';
+
+// layout
+@use 'layout/_header.scss';
+@use 'layout/_main.scss';
+
+@use 'layout/footer.scss';
+
+
+
+// components
+@use "widgets/card.scss";
+@use "widgets/buttons.scss";
+@use "widgets/game.scss";
+
+// pages
+@use "pages/tic-tac-toe.scss";
+@use "pages/rock-paper-scissors.scss";
+@use "pages/memory-flip.scss";
+@use "pages/guess-number.scss";
+// themes
+@use 'themes/dark.scss';
+
+// utilities
+@use "utilities/color.scss";
+@use "utilities/helpers.scss";
+@use "utilities/responsive.scss";
+

@@ -1,0 +1,65 @@
+.flex {
+    display: flex;
+}
+.block {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
+.hidden-svg {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.chervon-active {
+    rotate: 180deg;
+    transition: transform 0.35s ease-in-out;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.gap-1{
+   gap: 0.5rem;
+}
+.relative{
+   position: relative;
+}
+
+.rotate-180{
+    rotate: 180deg;
+}
+
+.ml-10{
+    margin-left: 10px;
+}
+.mr-10{
+    margin-right: 10px;
+}
+.mb-4{
+    margin-top: 16px;
+}
+
+
+.container{
+  width: 91.66666%;
+  margin:0 auto;
+  max-width: 1312px;
+  
+
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+}
+.icon-large{
+  width: 30px;
+  height: 30px;
+}
+

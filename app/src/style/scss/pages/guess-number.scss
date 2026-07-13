@@ -1,0 +1,79 @@
+@use '../abstracts/variables.scss' as *;
+
+.guess {
+
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: $padding;
+  background: $dark-800;
+  border-radius: $radius;
+  box-shadow: $shadow-lg;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+    color: $dark-50;
+  }
+
+  &__number {
+    font-size: 48px;
+    font-weight: bold;
+    width: 120px;
+    margin: 0 auto 20px;
+    padding: 12px;
+    background: $dark-500;
+    color: $color-text-light;
+    border-radius: $radius;
+    box-shadow: $shadow-md;
+  }
+
+  &__message {
+    margin-bottom: 20px;
+    color: $dark-200;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: $dark-100;
+    }
+  }
+
+  &__btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: $radius;
+    background: $dark-500;
+    color: $color-text-light;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background: $dark-600;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: $dark-50;
+    margin-bottom: 16px;
+  }
+
+  
+
+}

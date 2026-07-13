@@ -1,0 +1,52 @@
+$dark-50:  #F3F2FB;
+$dark-100: #DBD8F2;
+$dark-200: #C1BDE7;
+$dark-300: #A29EDB;
+$dark-400: #7E78C9;
+$dark-500: #5851B3;
+$dark-600: #3E3895;
+$dark-700: #2A266E;
+$dark-800: #17144A;
+$dark-900: #0A0731;
+
+// ==========================
+// Variables
+// ==========================
+$board-bg: #f8fafc;
+$cell-bg: #ffffff;
+$cell-hover: #eef2ff;
+
+$x-color: #6366f1; // Indigo
+$o-color: #0f172a; // Slate
+
+$cell-size: 96px;
+$radius: 14px;
+$transition: 0.25s ease;
+
+  /* $- Backgrounds $- */
+  $color-bg: #f5f7f8; /* linen */
+  $color-bg-light: #FFFFFF; /* white cards, menus */
+  $color-dark: #0A0731; /* haiti - for footer or dark mode */
+  $color-bg-alt:rgba(10, 7, 49, 0.03);  /* btn bg defult */
+  /* $- Text Colors $- */
+  $color-text: rgba(10, 7, 49, 0.7); /* comet - main text */
+  $dark-text: #e5e7eb;
+  $color-text-muted: rgba(10, 7, 49, 0.5); /* santas-gray - secondary text */
+  $color-text-light: #ffffff; /* for contrast on dark buttons */
+  $color-text-mute:#B5B5C1;
+  /* $- Borders / Dividers $- */
+  $color-border: #ccc; /* light neutral */
+  $color-divider: #e5e7eb; /* slightly darker divider */
+
+  /* $- Status Colors (optional) $- */
+  $color-success: #22c55e; /* green-400 */
+  $color-warning: #fbbf24; /* amber-400 */
+  $color-danger: #FFEEEC; 
+  $color-dangers:#ef4444;
+
+  $shadow-primary: 0 10px 20px rgba(255, 87, 68, 0.5);
+  $shadow-accent: 0 10px 20px rgba(70, 221, 243, 0.5);;
+  $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+  $shadow-lg: 15px 10px 15px rgba(0, 0, 0, 0.12);
+  $gradient-accent: linear-gradient(180deg, #46DDF3, #0C8CAE);
+  $padding: 16px 17px;

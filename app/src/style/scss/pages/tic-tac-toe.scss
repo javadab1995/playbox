@@ -1,0 +1,132 @@
+@use '../abstracts/variables.scss' as *;
+
+// ==========================
+// Board
+// ==========================
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 42rem;
+  width: 100%;
+  align-items: center;
+  background: $dark-800;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+}
+
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+  
+}
+
+// ==========================
+// Cell
+// ==========================
+.ttt-cell {
+  width: $cell-size;
+  height: $cell-size;
+  background: $cell-bg;
+  border: none;
+  border-radius: $radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: background $transition, transform $transition;
+
+  &:hover:not(:disabled) {
+    background: $cell-hover;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  svg {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+// ==========================
+// States
+// ==========================
+.ttt-cell.is-o {
+  cursor: default;
+
+  circle {
+    fill: none;
+    stroke: $o-color;
+    stroke-width: 10;
+    stroke-linecap: round;
+    animation: draw 0.4s ease-out forwards;
+  }
+}
+
+.ttt-cell.is-x {
+  cursor: default;
+
+  path {
+    stroke: $x-color;
+    stroke-width: 10;
+    stroke-linecap: round;
+    animation: draw 0.4s ease-out forwards;
+  }
+}
+
+.final__result{
+  display: flex;
+  max-width: 20rem;
+  justify-content: space-between;
+  font-weight: 700;
+  background: radial-gradient(
+    circle at center,
+    rgb(215, 224, 235),
+    transparent 200%
+  );
+  border-radius: 8px;
+
+  padding: 8px ;
+  width: 90%;
+  justify-self: center;
+  color: $dark-500;
+  &-staus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.375rem;
+  }
+}
+
+.start-btn{
+    display: flex;
+    padding: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+// ==========================
+// Animation
+// ==========================
+@keyframes draw {
+  from {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+

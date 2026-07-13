@@ -1,0 +1,218 @@
+@use "../abstracts/variables.scss" as *;
+
+.rps {
+  max-width: 42rem;
+  width: 100%;
+  min-height: 320px;
+  margin: 40px auto;
+  padding: 24px;
+  background: $dark-800;
+  color: $dark-50;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  font-family: system-ui, sans-serif;
+  @media (max-width: 768px) {
+    min-width: auto !important;
+    width: 100%;
+  }
+
+  /* ================= Header ================= */
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__lives,
+  &__score {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    opacity: 0.85;
+    &--best-value {
+      color: $color-success;
+    }
+    &-state {
+      border: 1px solid $dark-100;
+      padding: 4px 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      font-size: 28px;
+      display: flex;
+      gap: 6px;
+
+    }
+  }
+
+  &__hearts {
+    letter-spacing: 2px;
+     display: inline-block;
+    transition: transform .2s;
+    &--gain{
+       animation: heartPop .35s ease;
+    }
+    &--lose{
+      animation: heartLose .5s ease forwards;
+    }
+  }
+
+  &__score-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: $x-color;
+    margin-left: 4px;
+  }
+
+  /* ================= Board ================= */
+  &__board {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__choice {
+    background: $dark-700;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    min-height: 90px;
+
+    &-label {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    &-value {
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    &--player {
+      border: 1px solid $x-color;
+    }
+
+    &--computer {
+      border: 1px solid transparent;
+    }
+  }
+
+  &__vs {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  /* ================= Result ================= */
+  &__result {
+    text-align: center;
+    min-height: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+
+    &--win {
+      color: $color-success;
+    }
+
+    &--lose {
+      color: $color-dangers;
+    }
+
+    &--draw {
+      color: $x-color;
+    }
+  }
+
+  /* ================= Controls ================= */
+  &__controls {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__btn {
+    flex: 1;
+    padding: 12px 0;
+    border-radius: 12px;
+    background: $dark-700;
+    border: 1px solid transparent;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      border-color: $x-color;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+
+  &-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    color: $dark-800;
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__content {
+      background: $dark-200;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    &__title {
+      margin-bottom: 10px;
+      color: $dark-700;
+    }
+    &__btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+//*** animations ****//
+
+@keyframes heartPop {
+  0% {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heartLose {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: translateY(20px) rotate(-20deg);
+    opacity: 0;
+  }
+}

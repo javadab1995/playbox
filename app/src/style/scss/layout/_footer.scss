@@ -1,0 +1,15 @@
+@use '../abstracts/variables.scss' as *;
+.footer {
+   display: block;
+  background-color: $dark-100;
+  color: $dark-900;
+  margin: 0 auto;
+   width: 100%;
+   padding: $padding;
+   margin-bottom: 1rem;
+   font-size: 0.9rem;
+  letter-spacing: 0.5px;
+ text-align: center;
+ max-width: 80rem;
+}
+

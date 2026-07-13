@@ -1,0 +1,131 @@
+@use '../abstracts/variables.scss' as *;
+
+.memory {
+  max-width: 42rem;
+  width: 100%;
+  min-height: 350px;
+  margin: auto;
+  padding: 16px 17px;
+  background: $dark-800;
+  border-radius: $radius;
+  box-shadow: $shadow-lg;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 20px;
+    color: $dark-50;
+  }
+
+  &__stats {
+    font-size: 14px;
+    color: $dark-200;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  &__card {
+    width: 100%;
+    height: 90px;
+    perspective: 800px;
+    cursor: pointer;
+    color: $dark-50;
+
+  transition: transform .25s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+  &--matched {
+  animation: match .45s ease;
+}
+&--shake{
+animation:shake .45s;
+}
+
+  }
+
+
+  &__card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform $transition;
+    transform-style: preserve-3d;
+  }
+
+  &__card--flipped &__card-inner {
+    transform: rotateY(180deg);
+  }
+
+  &__card-front,
+  &__card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    backface-visibility: hidden;
+  }
+
+  &__card-front {
+    background: $dark-500;
+    box-shadow: $shadow-md;
+  }
+
+  &__card-back {
+    background: $dark-300;
+    transform: rotateY(180deg);
+    color: $cell-hover;
+    box-shadow: $shadow-md;
+  }
+
+}
+
+@keyframes match {
+
+0%{
+transform:scale(1);
+}
+
+40%{
+transform:scale(1.18);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+20%{transform:translateX(-8px);}
+40%{transform:translateX(8px);}
+60%{transform:translateX(-6px);}
+80%{transform:translateX(6px);}
+100%{transform:translateX(0);}
+
+}
+
+.memory__card--matched .memory__card-back{
+box-shadow:
+0 0 10px #22c55e,
+0 0 25px #22c55e;
+}
