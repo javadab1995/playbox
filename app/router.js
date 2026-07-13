@@ -12,17 +12,17 @@ export function render() {
 
   const path = location.pathname;
 
-  if (path === "/") {
+  if (path === "/playbox") {
     view.innerHTML = renderMain();
     return;
   }
 
-  if (path.startsWith("/game/")) {
+  if (path.startsWith("/playbox/game/")) {
     const gameId = path.split("/")[2];
     view.innerHTML = renderGameView(gameId);
-    mountTicTacToe(); 
+    mountTicTacToe();
     return;
- }
+  }
 
   view.innerHTML = "<p>Page not found</p>";
 }
