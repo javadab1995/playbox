@@ -5,6 +5,9 @@
   border-radius: 14px;
   cursor: pointer;
   min-width: 250px;
+  min-height: 300px;
+  border: 2px solid $dark-50;
+  box-shadow: $shadow-md;
 
   &__image {
     width: 100%;
