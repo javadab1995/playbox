@@ -12,12 +12,12 @@ export function render() {
 
   const path = location.pathname;
 
-  if (path === "/playbox") {
+  if (path === "/playbox/") {
     view.innerHTML = renderMain();
     return;
   }
 
-  if (path.startsWith("/playbox/game/")) {
+  if (path.startsWith("/game/")) {
     const gameId = path.split("/")[2];
     view.innerHTML = renderGameView(gameId);
     mountTicTacToe();
